@@ -5,22 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        .tooltip {
-            position:fixed;
-            top:-9999px;
-            left:0;
-            padding:4px;
-            max-width: 150px;
-            background:#fff;
-            box-shadow:0px 2px 4px rgba(0,0,0,.3);
-            opacity:0;
-            transition-property:opacity;
-        }
-    </style>
+    <style>*{box-sizing:border-box;}</style>
 </head>
 <body>
     <header style="padding:50px;background:pink;">
@@ -29,7 +14,7 @@
     <main style="padding:50px 0;display:flex;justify-content:space-between;">
         <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" title="Some Info 1">Some info</div>
         <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" title="Some Info 2">Some info</div>
-        <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" title="Some Info 3">Some info</div>
+        <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" data-tooltip="Some info 3" title="Some Info 3">Some info</div>
         <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" title="Some Info 4">Some info</div>
         <div style="padding:4px;width:60px;height:60px;text-align:center;color:#fff;background:blue" title="Some very very very very very very long info">Some very long info</div>
     </main>
@@ -37,7 +22,11 @@
     </footer>
     <script src="tooltip.min.js"></script>
     <script>
-        Tooltip.setOptions();
+        window.addEventListener('load', function() {
+            Tooltip.setOptions({
+                whereToShow: 'top'
+            });
+        });
     </script>
 </body>
 </html>
