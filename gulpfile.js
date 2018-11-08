@@ -10,7 +10,7 @@ const uglify = require('gulp-uglify');
 const bs = require('browser-sync').create();
 
 const isDebug = process.env.NODE_ENV !== 'production';
-const { PORT, OPEN, NODE_ENV, TUNNEL } = process.env;
+const { PORT, OPEN, TUNNEL } = process.env;
 
 gulp.task('default', () => runSequence('copy', 'scripts', 'server', 'watch'));
 
@@ -54,5 +54,3 @@ gulp.task('watch', () => {
   gulp.watch('src/*.html', () => runSequence('copy'));
   gulp.watch('src/*.js', () => runSequence('scripts'));
 });
-
-gulp.task('build', () => runSequence('styles', 'scripts'));

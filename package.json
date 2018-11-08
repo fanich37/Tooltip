@@ -4,13 +4,14 @@
   "description": "The tooltip plugin in pure JavaScript",
   "main": "index.js",
   "scripts": {
-    "start": "gulp --debug"
+    "start": "gulp --debug",
+    "production": "rimraf dist && cross-env NODE_ENV=production gulp scripts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-env": "^2.4.1",
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "cross-env": "^5.2.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
